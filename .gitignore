@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Env files: keep real values out of git, keep examples
+.env
+.env.*
+!.env.example
