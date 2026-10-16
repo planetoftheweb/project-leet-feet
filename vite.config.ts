@@ -5,13 +5,13 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/project-leet-feet/',
   server: {
     host: "::",
     port: 8080,
   },
   plugins: [
     react(),
-    base: '/project-leet-feet/',
     mode === 'development' && componentTagger(),
   ].filter(Boolean),
   resolve: {
