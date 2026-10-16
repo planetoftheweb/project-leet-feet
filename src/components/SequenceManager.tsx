@@ -368,11 +368,10 @@ export const SequenceManager = ({ currentBpm, currentSequence, currentAudioUrl, 
 
       // Send email notification
       const { error: emailError } = await supabase.functions.invoke('share-sequence', {
+        // The function reads the recipient, sequence name and sender from
+        // the share row and the signed-in session, not from this body.
         body: {
-          recipientEmail: shareEmail.trim(),
-          sequenceName: currentSequenceName || 'Untitled Sequence',
           shareToken: shareData.token,
-          senderEmail: user.email,
           appUrl: window.location.origin,
         },
       });
